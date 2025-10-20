@@ -1,0 +1,16 @@
+name: Veracode Security Scans
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  veracode_static_scan:
+    uses: veracode/veracode-workflow-app/.github/workflows/static.yml@v1
+
+  veracode_sca_scan:
+    uses: veracode/veracode-workflow-app/.github/workflows/sca.yml@v1
+
+  veracode_iac_secrets_scan:
+    uses: veracode/veracode-workflow-app/.github/workflows/iac-secrets.yml@v1
